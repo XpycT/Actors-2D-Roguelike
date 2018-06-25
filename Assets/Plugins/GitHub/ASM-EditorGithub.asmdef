@@ -1,0 +1,12 @@
+{
+    "name": "ASM-EditorGithub",
+    "references": [
+        "ASM-Plugins"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
