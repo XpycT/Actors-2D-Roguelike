@@ -21,8 +21,18 @@ MonoBehaviour:
   - {fileID: 1150114287317426, guid: 1f83338f06ec4d340a1af7f42f67779b, type: 2}
   - {fileID: 1150114287317426, guid: 511642a6c7aa2f04f8a7abb7e90dbb46, type: 2}
   - {fileID: 1150114287317426, guid: 46a7fadb4caa7114cb85385d7b6b5e49, type: 2}
-  prefabWalls: []
-  prefabFoods: []
+  prefabWalls:
+  - {fileID: 1150114287317426, guid: 94e8f9eb66551f64b984d8ce60af4006, type: 2}
+  - {fileID: 1150114287317426, guid: 82c8311dfae3f61449c4f04bf85f14ad, type: 2}
+  - {fileID: 1150114287317426, guid: ab852ee2620edba4b8517ef2f73e2581, type: 2}
+  - {fileID: 1150114287317426, guid: a9e01bdb4ce39064a8f10a235c7922a1, type: 2}
+  - {fileID: 1150114287317426, guid: 0d50cc7645530074fb09213a6776215f, type: 2}
+  - {fileID: 1150114287317426, guid: 23263feab3bfcf143a15e94870cb7c02, type: 2}
+  - {fileID: 1150114287317426, guid: 1dea72aac28168d418762bc1620490f1, type: 2}
+  - {fileID: 1150114287317426, guid: e1785846ee86bf1488e5d02fb73c326a, type: 2}
+  prefabFoods:
+  - {fileID: 1426344096523548, guid: b5b334320c93a6c49b31dcd869b6a351, type: 2}
+  - {fileID: 1426344096523548, guid: 5fdc24ff63636344cbffb81ab9c7723d, type: 2}
   prefabOuterWalls:
   - {fileID: 1150114287317426, guid: 6c8fee6f9af877b418c28b56830c375a, type: 2}
   - {fileID: 1150114287317426, guid: 3478d283d3e2e8041b96065ebafe65ca, type: 2}

@@ -6,19 +6,43 @@ using UnityEngine;
 public class ProcessingBoard : ProcessingBase, IMustBeWipedOut
 {
     private Transform boardHolder;
+    private List <Vector3> gridPositions = new List <Vector3> ();
+
+    private int rows;
+    private int columns;
 
     public ProcessingBoard()
     {
+        rows = Toolbox.Get<DataRoguelikeGameSession>().rows;
+        columns = Toolbox.Get<DataRoguelikeGameSession>().columns;
+        
+        //Creates the outer walls and floor.
         BoardSetup();
+        //Reset our list of gridpositions.
+        InitialiseList ();
+
+        SpawnWallAtRandom();
+        SpawnFoodAtRandom();
+        //Toolbox.Get<FactorySpawner>().RandomWall();
+    }
+
+    private void InitialiseList()
+    {
+        gridPositions.Clear ();
+			
+        for(int x = 1; x < columns-1; x++)
+        {
+            for(int y = 1; y < rows-1; y++)
+            {
+                gridPositions.Add (new Vector3(x, y, 0f));
+            }
+        }
     }
 
     private void BoardSetup()
     {
         boardHolder = new GameObject("Board").transform;
-
-        var rows = Toolbox.Get<DataRoguelikeGameSession>().rows;
-        var columns = Toolbox.Get<DataRoguelikeGameSession>().columns;
-
+        
         var factory = Toolbox.Get<FactorySpawner>();
 
         for (int x = -1; x < columns + 1; x++)
@@ -40,5 +64,39 @@ public class ProcessingBoard : ProcessingBase, IMustBeWipedOut
                 go.SetParent(boardHolder);
             }
         }
+    }
+    
+    void SpawnWallAtRandom()
+    {
+        int minimum = Toolbox.Get<DataRoguelikeGameSession>().wallCount.minimum;
+        int maximum = Toolbox.Get<DataRoguelikeGameSession>().wallCount.maximum;
+        int objectCount = Random.Range (minimum, maximum+1);
+			
+        for(int i = 0; i < objectCount; i++)
+        {
+            Vector3 randomPosition = RandomPosition();
+            Toolbox.Get<FactorySpawner>().SpawnWall(randomPosition);
+        }
+    }
+    
+    void SpawnFoodAtRandom()
+    {
+        int minimum = Toolbox.Get<DataRoguelikeGameSession>().foodCount.minimum;
+        int maximum = Toolbox.Get<DataRoguelikeGameSession>().foodCount.maximum;
+        int objectCount = Random.Range (minimum, maximum+1);
+			
+        for(int i = 0; i < objectCount; i++)
+        {
+            Vector3 randomPosition = RandomPosition();
+            Toolbox.Get<FactorySpawner>().SpawnFood(randomPosition);
+        }
+    }
+    
+    Vector3 RandomPosition()
+    {
+        int randomIndex = Random.Range (0, gridPositions.Count);
+        Vector3 randomPosition = gridPositions[randomIndex];
+        gridPositions.RemoveAt (randomIndex);
+        return randomPosition;
     }
 }

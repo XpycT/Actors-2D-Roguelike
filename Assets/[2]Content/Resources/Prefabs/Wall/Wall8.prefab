@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4804651465691446}
   - component: {fileID: 212270930925144952}
-  - component: {fileID: 61812748798919424}
+  - component: {fileID: 61885845552288212}
   m_Layer: 0
-  m_Name: OuterWall2
+  m_Name: Wall8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61812748798919424
+--- !u!61 &61885845552288212
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -98,10 +98,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 759260659
-  m_SortingLayer: 1
+  m_SortingLayerID: -481310849
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300052, guid: acc97c0a0984d3e47ac0c136919f287f, type: 3}
+  m_Sprite: {fileID: 21300062, guid: acc97c0a0984d3e47ac0c136919f287f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

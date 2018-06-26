@@ -31,18 +31,16 @@ public class FactorySpawner : Factory
 		return floor;
 	}
 	
-	public Transform SpawnWall(Vector3 pos)
+	public void SpawnWall(Vector3 pos)
 	{
 		var wall = this.Populate(Pool.None, prefabWalls.ReturnRandom(), pos);
 		wall.transform.position = new Vector3(pos.x, pos.y, 0);
-		return wall;
 	}
 	
-	public Transform SpawFood(Vector3 pos)
+	public void SpawnFood(Vector3 pos)
 	{
 		var food = this.Populate(Pool.None, prefabFoods.ReturnRandom(), pos);
 		food.transform.position = new Vector3(pos.x, pos.y, 0);
-		return food;
 	}
 	
 	public Transform SpawOuterWall(Vector3 pos)
