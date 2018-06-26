@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fc4f06e8dd42843980322f026363bf, type: 3}
+  m_Name: FactorySpawner
+  m_EditorClassIdentifier: 
+  prefabEnemies: []
+  prefabFloors:
+  - {fileID: 1150114287317426, guid: 4e188c386368bdb45aef50092e523aca, type: 2}
+  - {fileID: 1150114287317426, guid: 35d156ec97dfc2044a76b103affa4714, type: 2}
+  - {fileID: 1150114287317426, guid: 706c21b3679ac464fa481ef644eea1c7, type: 2}
+  - {fileID: 1150114287317426, guid: f407e9ea45ad59446b73d37994ee4ef7, type: 2}
+  - {fileID: 1150114287317426, guid: 13f6d306fe27beb4ca39e882b30413cc, type: 2}
+  - {fileID: 1150114287317426, guid: 1f83338f06ec4d340a1af7f42f67779b, type: 2}
+  - {fileID: 1150114287317426, guid: 511642a6c7aa2f04f8a7abb7e90dbb46, type: 2}
+  - {fileID: 1150114287317426, guid: 46a7fadb4caa7114cb85385d7b6b5e49, type: 2}
+  prefabWalls: []
+  prefabFoods: []
+  prefabOuterWalls:
+  - {fileID: 1150114287317426, guid: 6c8fee6f9af877b418c28b56830c375a, type: 2}
+  - {fileID: 1150114287317426, guid: 3478d283d3e2e8041b96065ebafe65ca, type: 2}
+  - {fileID: 1150114287317426, guid: 013ba0353873bbe4a85708c63719b020, type: 2}
+  prefabPlayer: {fileID: 0}

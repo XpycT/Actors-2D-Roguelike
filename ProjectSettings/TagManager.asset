@@ -38,9 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Foreground
-    uniqueID: 961037027
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 759260659
+    locked: 0
+  - name: Items
+    uniqueID: 3813656447
+    locked: 0
+  - name: Units
+    uniqueID: 3371761349
+    locked: 0
+  - name: Foreground
+    uniqueID: 961037027
     locked: 0
