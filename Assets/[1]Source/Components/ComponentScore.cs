@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Homebrew;
+﻿using Homebrew;
 using TMPro;
-using UnityEngine;
 
 public class ComponentScore : MonoCached, IReceive<SignalChangeScore>
 {

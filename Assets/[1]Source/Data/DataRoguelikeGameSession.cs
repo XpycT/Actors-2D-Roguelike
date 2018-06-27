@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Homebrew;
+﻿using Homebrew;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DataRoguelikeGameSession", menuName = "Data/DataRoguelikeGameSession")]

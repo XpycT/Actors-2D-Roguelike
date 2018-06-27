@@ -37,4 +37,6 @@ MonoBehaviour:
   - {fileID: 1150114287317426, guid: 6c8fee6f9af877b418c28b56830c375a, type: 2}
   - {fileID: 1150114287317426, guid: 3478d283d3e2e8041b96065ebafe65ca, type: 2}
   - {fileID: 1150114287317426, guid: 013ba0353873bbe4a85708c63719b020, type: 2}
-  prefabPlayer: {fileID: 0}
+  prefabPlayer: {fileID: 1860425917307304, guid: 0af293c7b163adb4a8305db6436941b3,
+    type: 2}
+  prefabExit: {fileID: 1894883390947516, guid: 3bcd522a3071e634cb84310964f60b68, type: 2}

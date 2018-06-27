@@ -10,6 +10,8 @@ public class ActorPlayer : Actor, ITick
 	{
 		Add(dataMove);
 		Add<BehaviorInput>();
+		
+		tags.Add(Tag.GroupPlayers);
 	}
 
 	protected override void OnTick()

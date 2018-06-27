@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Homebrew;
 using UnityEngine;
 
@@ -12,16 +11,22 @@ public class FactorySpawner : Factory
 	[SerializeField] private List<GameObject> prefabFoods = new List<GameObject>();
 	[SerializeField] private List<GameObject> prefabOuterWalls = new List<GameObject>();
 	[SerializeField] private GameObject prefabPlayer;
+	[SerializeField] private GameObject prefabExit;
 
 	public override Transform Spawn(int id)
 	{
 		var prefab = prefabEnemies[id];
 		return this.Populate(Pool.None, prefab);
 	}
+	
+	public Transform SpawnExit(Vector3 pos)
+	{
+		return this.Populate(Pool.None, prefabExit, pos);
+	}
 
 	public Transform SpawnPlayer()
 	{
-		return this.Populate(Pool.None, prefabPlayer);
+		return this.Populate(Pool.None, prefabPlayer, Vector3.zero);
 	}
 
 	public Transform SpawnFloor(Vector3 pos)

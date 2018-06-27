@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4948424775934704}
   - component: {fileID: 212543853869310908}
   - component: {fileID: 61511782768749916}
+  - component: {fileID: 114359457747616574}
   m_Layer: 0
   m_Name: soda
   m_TagString: Untagged
@@ -66,6 +67,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114359457747616574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1426344096523548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c4abea9cbeb475b8643adced5f8ed04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: 0
+  destroyDelayTime: 0
+  time:
+    isActive: 1
+    timeScale: 1
+  selfTransform: {fileID: 0}
+  state: 0
+  hashCode: 0
+  dataFood:
+    food: 20
 --- !u!212 &212543853869310908
 SpriteRenderer:
   m_ObjectHideFlags: 1

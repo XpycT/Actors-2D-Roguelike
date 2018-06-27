@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Homebrew;
-using UnityEngine;
+﻿using Homebrew;
 
 public class StarterGame : Starter {
 	

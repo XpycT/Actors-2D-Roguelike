@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Homebrew;
 using UnityEngine;
 
@@ -10,11 +9,13 @@ public class ProcessingBoard : ProcessingBase, IMustBeWipedOut
 
     private int rows;
     private int columns;
+    private FactorySpawner factory;
 
     public ProcessingBoard()
     {
         rows = Toolbox.Get<DataRoguelikeGameSession>().rows;
         columns = Toolbox.Get<DataRoguelikeGameSession>().columns;
+        factory = Toolbox.Get<FactorySpawner>();
         
         //Creates the outer walls and floor.
         BoardSetup();
@@ -23,7 +24,10 @@ public class ProcessingBoard : ProcessingBase, IMustBeWipedOut
 
         SpawnWallAtRandom();
         SpawnFoodAtRandom();
-        //Toolbox.Get<FactorySpawner>().RandomWall();
+
+        factory.SpawnExit(new Vector3 (columns - 1, rows - 1, 0f));
+
+        factory.SpawnPlayer();
     }
 
     private void InitialiseList()
@@ -43,8 +47,6 @@ public class ProcessingBoard : ProcessingBase, IMustBeWipedOut
     {
         boardHolder = new GameObject("Board").transform;
         
-        var factory = Toolbox.Get<FactorySpawner>();
-
         for (int x = -1; x < columns + 1; x++)
         {
             for (int y = -1; y < rows + 1; y++)
@@ -66,7 +68,7 @@ public class ProcessingBoard : ProcessingBase, IMustBeWipedOut
         }
     }
     
-    void SpawnWallAtRandom()
+    private void SpawnWallAtRandom()
     {
         int minimum = Toolbox.Get<DataRoguelikeGameSession>().wallCount.minimum;
         int maximum = Toolbox.Get<DataRoguelikeGameSession>().wallCount.maximum;
@@ -79,7 +81,7 @@ public class ProcessingBoard : ProcessingBase, IMustBeWipedOut
         }
     }
     
-    void SpawnFoodAtRandom()
+    private void SpawnFoodAtRandom()
     {
         int minimum = Toolbox.Get<DataRoguelikeGameSession>().foodCount.minimum;
         int maximum = Toolbox.Get<DataRoguelikeGameSession>().foodCount.maximum;
@@ -92,7 +94,7 @@ public class ProcessingBoard : ProcessingBase, IMustBeWipedOut
         }
     }
     
-    Vector3 RandomPosition()
+    private Vector3 RandomPosition()
     {
         int randomIndex = Random.Range (0, gridPositions.Count);
         Vector3 randomPosition = gridPositions[randomIndex];
