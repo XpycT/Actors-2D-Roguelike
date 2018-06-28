@@ -20,4 +20,6 @@ public class DataRoguelikeGameSession : DataGame
     public DataCount foodCount = new DataCount(1, 5);
     
     [HideInInspector] public bool playersTurn = true;
+    [HideInInspector] public bool enemiesMoving = false;
+    [HideInInspector] public bool enabled = true;
 }

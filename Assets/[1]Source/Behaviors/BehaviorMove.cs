@@ -13,13 +13,11 @@ public class BehaviorMove : Behavior, ITick, ITickFixed
 
     [Bind(From.Object)] private Transform transform;
 
-    protected override void Setup()
-    {
-        base.Setup();
-    }
-
+    
     public override void OnTick()
     {
+        if (!Toolbox.Get<DataRoguelikeGameSession>().enabled) return;
+
         if (!Toolbox.Get<DataRoguelikeGameSession>().playersTurn) return;
 
         if (dataMove.x != 0 || dataMove.y != 0)
@@ -28,9 +26,6 @@ public class BehaviorMove : Behavior, ITick, ITickFixed
         }
 
         Toolbox.Get<DataRoguelikeGameSession>().playersTurn = false;
-
-        Timer.Add(Toolbox.Get<DataRoguelikeGameSession>().turnDelay,
-            () => { Toolbox.Get<DataRoguelikeGameSession>().playersTurn = true; });
     }
 
     private void AttemptMove()
@@ -59,10 +54,12 @@ public class BehaviorMove : Behavior, ITick, ITickFixed
         {
             return true;
         }
+        if (hit.HasTag(Tag.ColliderHit))
+        {
+            ProcessingSignals.Default.Send(new SignalTriggerEnter {other = hit.collider});
+        }
 
-
-        Collider2D col = hit.transform.GetComponent<Collider2D>();
-        if (!col.HasTag(Tag.ColliderWall)) return true;
+        if (!hit.HasTag(Tag.ColliderWall)) return true;
 
 
         return false;

@@ -13,6 +13,7 @@ public class ActorPlayer : Actor, ITick
         Add<DataRaycast>();
         Add<BehaviorInput>();
         Add<BehaviorMove>();
+        Add<BehaviorChop>();
 
         tags.Add(Tag.GroupPlayers);
     }

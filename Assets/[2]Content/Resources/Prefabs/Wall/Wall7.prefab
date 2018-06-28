@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212270930925144952}
   - component: {fileID: 61885845552288212}
   - component: {fileID: 114104077872948930}
+  - component: {fileID: 114398148540758464}
   m_Layer: 0
   m_Name: Wall7
   m_TagString: Untagged
@@ -87,6 +88,28 @@ MonoBehaviour:
   state: 0
   tags:
   - id: 0
+  - id: 1
+--- !u!114 &114398148540758464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1150114287317426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea3310c9a81484b836163b6ce88a60e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: 0
+  destroyDelayTime: 0
+  time:
+    isActive: 1
+    timeScale: 1
+  selfTransform: {fileID: 0}
+  state: 0
+  hashCode: 0
+  dmgSprite: {fileID: 21300106, guid: acc97c0a0984d3e47ac0c136919f287f, type: 3}
+  hp: 4
 --- !u!212 &212270930925144952
 SpriteRenderer:
   m_ObjectHideFlags: 1

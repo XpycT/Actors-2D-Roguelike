@@ -10,8 +10,15 @@ public class ComponentScore : MonoCached, IReceive<SignalChangeScore>
         if (state.HasState(EntityState.OnHold)) return;
         base.OnEnable();
         ProcessingSignals.Default.Add(this);
+        
+        updateScore();
     }
-    
+
+    private void updateScore()
+    {
+        label.text = "Food: " + Toolbox.Get<DataRoguelikeGameSession>().food;
+    }
+
     public override void OnDisable()
     {
         base.OnDisable();
@@ -21,6 +28,6 @@ public class ComponentScore : MonoCached, IReceive<SignalChangeScore>
     public void HandleSignal(SignalChangeScore arg)
     {
         Toolbox.Get<DataRoguelikeGameSession>().food += arg.score;
-        label.text = "Food: "+Toolbox.Get<DataRoguelikeGameSession>().food;
+        updateScore();
     }
 }
