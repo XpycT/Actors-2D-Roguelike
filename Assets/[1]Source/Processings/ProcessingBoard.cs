@@ -97,9 +97,9 @@ public class ProcessingBoard : ProcessingBase, IMustBeWipedOut
     
     private void SpawnEnemies()
     {
-        int enemyCount = (int)Mathf.Log(Toolbox.Get<DataRoguelikeGameSession>().level, 2f);
-        enemyCount = 3;
         Toolbox.Get<DataRoguelikeGameSession>().enemies.Clear();
+        
+        int enemyCount = (int)Mathf.Log(Toolbox.Get<DataRoguelikeGameSession>().level, 2f);
         for(int i = 0; i < enemyCount; i++)
         {
             Vector3 randomPosition = RandomPosition();

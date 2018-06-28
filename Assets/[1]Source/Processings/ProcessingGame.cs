@@ -9,6 +9,8 @@ public class ProcessingGame : ProcessingBase, IMustBeWipedOut, ITick, IReceive<S
     private DataRoguelikeGameSession session;
     private TextMeshProUGUI labelLevel;
 
+    private bool gameOver = false;
+
     public ProcessingGame()
     {
         doingSetup = true;
@@ -55,9 +57,9 @@ public class ProcessingGame : ProcessingBase, IMustBeWipedOut, ITick, IReceive<S
         {
             //Call the MoveEnemy function of Enemy at index i in the enemies List.
             ActorEnemy enemy = session.enemies[i] as ActorEnemy;
-            enemy.Get<BehaviorAI>().MoveEnemy();
+            session.enemies[i].SignalDispatch(new SignalMove());
 
-            //Wait for Enemy's moveTime before moving next Enemy, 
+            //Wait for Enemy's moveTime before moving next Enemy
             yield return new WaitForSeconds(enemy.dataMove.moveTime);
         }
 
@@ -67,9 +69,11 @@ public class ProcessingGame : ProcessingBase, IMustBeWipedOut, ITick, IReceive<S
     
     private void CheckIfGameOver()
     {
-        if (session.food <= 0)
+        if (!gameOver && session.food <= 0)
         {
-            Toolbox.Get<FactorySounds>().Spawn(Tag.SoundGameOver, .8f);
+            gameOver = true;
+            
+            Toolbox.Get<FactorySounds>().Spawn(Tag.SoundGameOver);
             ProcessingScene.Default.Get("[KERNEL]/obj_music").GetComponent<AudioSource>().Stop();
             
             labelLevel.text = "After " + session.level + " days, you starved.";

@@ -2,7 +2,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class BehaviorAI : Behavior, IReceive<SignalDamage>
+public class BehaviorAI : Behavior, IReceive<SignalDamage>, IReceive<SignalMove>
 {
     [Bind] private DataMove dataMove;
     [Bind] private DataDamage dataDamage;
@@ -23,7 +23,7 @@ public class BehaviorAI : Behavior, IReceive<SignalDamage>
         target = GameObject.FindObjectOfType<ActorPlayer>().transform;
     }
 
-    public void MoveEnemy()
+    private void MoveEnemy()
     {
         int xDir = 0;
         int yDir = 0;
@@ -106,5 +106,10 @@ public class BehaviorAI : Behavior, IReceive<SignalDamage>
         arg.other.GetComponent<Animator>().SetTrigger("playerHit");
         
         Toolbox.Get<FactorySounds>().Spawn(Tag.SoundAttack, 0.6f);
+    }
+
+    public void HandleSignal(SignalMove arg)
+    {
+        MoveEnemy();
     }
 }
