@@ -1,4 +1,5 @@
-﻿using Homebrew;
+﻿using DG.Tweening;
+using Homebrew;
 
 public class StarterGame : Starter {
 	
@@ -13,6 +14,7 @@ public class StarterGame : Starter {
 	void CloseScene()
 	{
 		ProcessingTimer.Default.Dispose();
+		DOTween.KillAll();
 	}
 }
 

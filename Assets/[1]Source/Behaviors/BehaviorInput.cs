@@ -16,8 +16,13 @@ namespace Homebrew
 
 		public override void OnTick()
 		{
-			dataMove.x = Input.GetAxis("Horizontal");
-			dataMove.y = Input.GetAxis("Vertical");
+			dataMove.x = (int) (Input.GetAxisRaw("Horizontal"));
+			dataMove.y = (int) (Input.GetAxisRaw("Vertical"));
+			
+			if(dataMove.x != 0)
+			{
+				dataMove.y = 0;
+			}
 		}
 	}
 }

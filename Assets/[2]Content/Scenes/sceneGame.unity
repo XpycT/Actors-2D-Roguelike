@@ -442,6 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factories:
   - {fileID: 11400000, guid: 054e31e5d0556c04aa69b252ed2adbe3, type: 2}
+  - {fileID: 11400000, guid: 0b19b6a2302a3354ab91606e288c2a55, type: 2}
   ScenesToKeep:
   - {fileID: 11400000, guid: 9b21835dcc04ac647b03cf896e9bede4, type: 2}
   SceneDependsOn:

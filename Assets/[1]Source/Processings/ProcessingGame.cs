@@ -1,7 +1,7 @@
 ﻿using Homebrew;
 using TMPro;
 
-public class ProcessingGame : ProcessingBase, IMustBeWipedOut, ITick {
+public class ProcessingGame : ProcessingBase, IMustBeWipedOut, ITick, IReceive<SignalNextLevel> {
 
     public ProcessingGame()
     {
@@ -24,5 +24,14 @@ public class ProcessingGame : ProcessingBase, IMustBeWipedOut, ITick {
     public void Tick()
     {
         
+    }
+
+    public void HandleSignal(SignalNextLevel arg)
+    {
+        Timer.Add(Toolbox.Get<DataRoguelikeGameSession>().restartDelay, () =>
+        {
+            //Toolbox.Get<DataRoguelikeGameSession>().playersTurn = false;
+            Scenes.sceneGame.To();
+        });
     }
 }

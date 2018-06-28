@@ -11,8 +11,9 @@ namespace Homebrew
 	[System.Serializable]
 	public class DataMove : IData, ISetup
 	{
-		public float x;
-		public float y;
+		public int x;
+		public int y;
+		public float moveTime = 0.1f;
 
 		public void Dispose()
 		{
@@ -20,7 +21,8 @@ namespace Homebrew
 
 		public void Setup(Actor actor)
 		{
-			x = actor.selfTransform.position.x;
+			this.x = 0;
+			this.y = 0;
 		}
 	}
 }
