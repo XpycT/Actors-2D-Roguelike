@@ -109,7 +109,8 @@ MonoBehaviour:
   state: 0
   hashCode: 0
   dmgSprite: {fileID: 21300100, guid: acc97c0a0984d3e47ac0c136919f287f, type: 3}
-  hp: 4
+  dataHp:
+    hp: 4
 --- !u!212 &212270930925144952
 SpriteRenderer:
   m_ObjectHideFlags: 1
