@@ -28,6 +28,6 @@ public class ComponentScore : MonoCached, IReceive<SignalChangeScore>
     public void HandleSignal(SignalChangeScore arg)
     {
         Toolbox.Get<DataRoguelikeGameSession>().food += arg.score;
-        updateScore();
+        label.text = arg.text + " Food: " + Toolbox.Get<DataRoguelikeGameSession>().food;
     }
 }

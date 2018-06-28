@@ -2,20 +2,9 @@
 using Homebrew;
 using UnityEngine;
 
-public class BehaviorChop : Behavior, IReceive<SignalTriggerEnter>
+public class BehaviorChop : Behavior, IReceiveGlobal<SignalTriggerEnter>
 {
     [Bind(From.Object)] private Animator anim;
-    
-    protected override void Setup()
-    {
-        ProcessingSignals.Default.Add(this);
-    }
-    
-    protected override void OnDisable()
-    {
-        base.OnDisable();
-        ProcessingSignals.Default.Remove(this);
-    }
     
     public void HandleSignal(SignalTriggerEnter arg)
     {

@@ -48,6 +48,13 @@ public class FactorySpawner : Factory
 		food.transform.position = new Vector3(pos.x, pos.y, 0);
 	}
 	
+	public Transform SpawnEnemy(Vector3 pos)
+	{
+		var enemy = this.Populate(Pool.None, prefabEnemies.ReturnRandom(), pos);
+		enemy.transform.position = new Vector3(pos.x, pos.y, 0);
+		return enemy;
+	}
+	
 	public Transform SpawOuterWall(Vector3 pos)
 	{
 		var outerWall = this.Populate(Pool.None, prefabOuterWalls.ReturnRandom(), pos);

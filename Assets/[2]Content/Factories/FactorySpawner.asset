@@ -11,7 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fc4f06e8dd42843980322f026363bf, type: 3}
   m_Name: FactorySpawner
   m_EditorClassIdentifier: 
-  prefabEnemies: []
+  prefabEnemies:
+  - {fileID: 1860425917307304, guid: 4926ab18cd9998e4885707f49941c146, type: 2}
+  - {fileID: 1860425917307304, guid: c95ebcdbd5fc3a04a9b6751f590b123d, type: 2}
   prefabFloors:
   - {fileID: 1150114287317426, guid: 4e188c386368bdb45aef50092e523aca, type: 2}
   - {fileID: 1150114287317426, guid: 35d156ec97dfc2044a76b103affa4714, type: 2}

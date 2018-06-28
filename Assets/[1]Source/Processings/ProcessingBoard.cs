@@ -24,6 +24,7 @@ public class ProcessingBoard : ProcessingBase, IMustBeWipedOut
 
         SpawnWallAtRandom();
         SpawnFoodAtRandom();
+        SpawnEnemies();
 
         factory.SpawnExit(new Vector3 (columns - 1, rows - 1, 0f));
 
@@ -77,7 +78,7 @@ public class ProcessingBoard : ProcessingBase, IMustBeWipedOut
         for(int i = 0; i < objectCount; i++)
         {
             Vector3 randomPosition = RandomPosition();
-            Toolbox.Get<FactorySpawner>().SpawnWall(randomPosition);
+            factory.SpawnWall(randomPosition);
         }
     }
     
@@ -90,7 +91,20 @@ public class ProcessingBoard : ProcessingBase, IMustBeWipedOut
         for(int i = 0; i < objectCount; i++)
         {
             Vector3 randomPosition = RandomPosition();
-            Toolbox.Get<FactorySpawner>().SpawnFood(randomPosition);
+            factory.SpawnFood(randomPosition);
+        }
+    }
+    
+    private void SpawnEnemies()
+    {
+        int enemyCount = (int)Mathf.Log(Toolbox.Get<DataRoguelikeGameSession>().level, 2f);
+        enemyCount = 3;
+        Toolbox.Get<DataRoguelikeGameSession>().enemies.Clear();
+        for(int i = 0; i < enemyCount; i++)
+        {
+            Vector3 randomPosition = RandomPosition();
+            var go = factory.SpawnEnemy(randomPosition);
+            Toolbox.Get<DataRoguelikeGameSession>().enemies.Add(go.GetComponent<Actor>());
         }
     }
     

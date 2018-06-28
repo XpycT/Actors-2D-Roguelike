@@ -24,7 +24,11 @@ public class ActorFood : Actor
         public void HandleSignal(SignalInteract arg)
         {
             //var other = arg.other;
-            ProcessingSignals.Default.Send(new SignalChangeScore {score = dataFood.food});
+            ProcessingSignals.Default.Send(new SignalChangeScore
+            {
+                score = dataFood.food, 
+                text = "+"+dataFood.food
+            });
             actor.HandleDestroyGO();
             if (dataTag.id == Tag.GroupFood)
             {

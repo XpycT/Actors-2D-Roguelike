@@ -3,7 +3,7 @@ using DG.Tweening;
 using Homebrew;
 using UnityEngine;
 
-public class BehaviorMove : Behavior, ITick, ITickFixed
+public class BehaviorMove : Behavior, ITick
 {
     [Bind] private DataMove dataMove;
 
@@ -24,8 +24,6 @@ public class BehaviorMove : Behavior, ITick, ITickFixed
         {
             AttemptMove();
         }
-
-        Toolbox.Get<DataRoguelikeGameSession>().playersTurn = false;
     }
 
     private void AttemptMove()
@@ -37,12 +35,14 @@ public class BehaviorMove : Behavior, ITick, ITickFixed
             Move();
             Toolbox.Get<FactorySounds>().Spawn(Tag.SoundMove);
         }
+        
+        
+        Toolbox.Get<DataRoguelikeGameSession>().playersTurn = false;
     }
 
     private bool CanMove()
     {
         Vector3 end = transform.position + new Vector3(dataMove.x, dataMove.y);
-
 
         collider.enabled = false;
 

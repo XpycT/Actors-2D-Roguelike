@@ -31,11 +31,4 @@ public class ActorPlayer : Actor, ITick
             ProcessingSignals.Default.Send(new SignalNextLevel {});
         }
     }
-
-    protected override void OnTick()
-    {
-        base.OnTick();
-        //	if (Input.GetKeyDown(KeyCode.A))
-        //		Scenes.sceneTest.To();
-    }
 }
